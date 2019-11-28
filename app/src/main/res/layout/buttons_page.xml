@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <Button android:id="@+id/btnViewData"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Measurement"
+        android:layout_marginTop="25dip"/>
+    <Button android:id="@+id/btnDiagram"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Temperature Chart"
+        android:layout_marginTop="25dip"/>
+    <Button android:id="@+id/btnAllMedicines"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="All Medicines"
+        android:layout_marginTop="25dip"/>
+    <Button android:id="@+id/btnAddMedicine"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Receipt"
+        android:layout_marginTop="25dip"/>
+</LinearLayout>
