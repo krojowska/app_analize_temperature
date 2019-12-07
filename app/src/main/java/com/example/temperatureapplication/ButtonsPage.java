@@ -40,7 +40,8 @@ public class ButtonsPage extends AppCompatActivity {
         btnDiagram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ButtonsPage.this, ButtonsPage.class));
+                Intent intent = new Intent(ButtonsPage.this, ChartActivity.class);
+                startActivity(intent);
             }
         });
 
