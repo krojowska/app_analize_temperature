@@ -5,8 +5,8 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="16sp"
+        android:textColor="@color/abc_primary_text_material_dark"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:text="Medicine"
         android:layout_height="wrap_content" />
@@ -17,8 +17,8 @@
         android:layout_height="wrap_content" />
     <TextView
         android:layout_width="wrap_content"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="16sp"
+        android:textColor="@color/abc_primary_text_material_dark"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:text="Dose"
         android:layout_height="wrap_content" />
@@ -29,8 +29,8 @@
         android:layout_height="wrap_content" />
     <TextView
         android:layout_width="wrap_content"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="16sp"
+        android:textColor="@color/abc_primary_text_material_dark"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:text="Time of day"
         android:layout_height="wrap_content" />

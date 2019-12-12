@@ -58,7 +58,7 @@ public class ChartFragment extends Fragment {
                             barEntries.add(new BarEntry(growth.getId(), growth.getTemperature()));
                         }
 
-                        BarDataSet barDataSet = new BarDataSet(barEntries, "Growth");
+                        BarDataSet barDataSet = new BarDataSet(barEntries, "Temperature");
                         barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
 
                         BarData barData = new BarData(barDataSet);

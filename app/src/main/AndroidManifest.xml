@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.temperatureapplication">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -27,6 +29,21 @@
         <activity android:name=".ChartFragment" />
         <activity android:name=".Growth" />
         <activity android:name=".AppInterface" />
+        <activity android:name=".MainNotifications" />
+        <activity android:name=".AddReminderActivity"
+            android:label="@string/title_activity_add_reminder"
+            android:parentActivityName=".MainNotifications"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainNotifications" />
+        </activity>
+        <provider
+            android:name="AlarmReminderProvider"
+            android:authorities="com.example.temperatureapplication"
+            android:exported="false" />
+        <service
+            android:name="ReminderAlarmService"
+            android:exported="false" />
     </application>
-
 </manifest>

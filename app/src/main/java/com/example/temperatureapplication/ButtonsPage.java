@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class ButtonsPage extends AppCompatActivity {
-    Button btnViewData, btnAllMedicines, btnAddMedicine, btnDiagram;
+    Button btnViewData, btnAllMedicines, btnAddMedicine, btnDiagram, btnNotifications;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +20,7 @@ public class ButtonsPage extends AppCompatActivity {
         btnAllMedicines = findViewById(R.id.btnAllMedicines);
         btnDiagram = findViewById(R.id.btnDiagram);
         btnAddMedicine = findViewById(R.id.btnAddMedicine);
+        btnNotifications = findViewById(R.id.btnNotifications);
 
         // view products click event
         btnViewData.setOnClickListener(new View.OnClickListener() {
@@ -49,6 +50,13 @@ public class ButtonsPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ButtonsPage.this, AddMedicine.class));
+            }
+        });
+
+        btnNotifications.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ButtonsPage.this, MainNotifications.class));
             }
         });
 

@@ -13,16 +13,21 @@
     <Button android:id="@+id/btnDiagram"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Temperature Chart"
+        android:text="Temperature Diagram"
         android:layout_marginTop="25dip"/>
     <Button android:id="@+id/btnAllMedicines"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="All Medicines"
+        android:text="Medicines"
+        android:layout_marginTop="25dip"/>
+    <Button android:id="@+id/btnNotifications"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Notifications"
         android:layout_marginTop="25dip"/>
     <Button android:id="@+id/btnAddMedicine"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Add Receipt"
+        android:text="Add Medicine"
         android:layout_marginTop="25dip"/>
 </LinearLayout>

@@ -9,8 +9,8 @@
         android:layout_height="wrap_content"
         android:paddingBottom="2dip"
         android:paddingTop="6dip"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="16sp"
+        android:textColor="@color/abc_primary_text_material_dark"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
@@ -30,6 +30,6 @@
         android:id="@+id/reading_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#5d5d5d"
+        android:textColor="@color/abc_secondary_text_material_dark"
         android:textStyle="bold" />
 </LinearLayout>
