@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <TextView
         android:id="@+id/medicine"
         android:layout_width="fill_parent"
@@ -12,24 +11,100 @@
         android:textColor="@color/abc_primary_text_material_dark"
         android:textSize="20sp"
         android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/dose"
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="2dip"
-        android:textColor="@color/colorAccent" />
-    <TextView
-        android:id="@+id/time_of_day"
+        android:orientation="horizontal"
+        android:weightSum="10">
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dip"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:text="Start date: "
+            android:textSize="16sp"
+            android:layout_weight="5"/>
+        <TextView
+            android:id="@+id/start_date"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dip"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_weight="5"/>
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="2dip"
-        android:textColor="@color/colorAccent" />
-
-    <TextView
-        android:id="@+id/reading_time"
-        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10">
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dip"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:text="Time of dose: "
+            android:textSize="16sp"
+            android:layout_weight="5"/>
+        <TextView
+            android:id="@+id/time_of_dose"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dip"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_weight="5"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/abc_secondary_text_material_dark"
-        android:textStyle="bold" />
+        android:orientation="horizontal"
+        android:weightSum="10">
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dip"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:text="Repetition interval: "
+            android:textSize="16sp"
+            android:layout_weight="5"/>
+        <TextView
+            android:id="@+id/repetition_interval"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dip"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_weight="5"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10">
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dip"
+            android:textColor="@color/fab_pressed"
+            android:textStyle="bold"
+            android:text="Added date: "
+            android:textSize="16sp"
+            android:layout_weight="5"/>
+        <TextView
+            android:id="@+id/reading_time"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="2dip"
+            android:textColor="@color/fab_pressed"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_weight="5"/>
+</LinearLayout>
 </LinearLayout>

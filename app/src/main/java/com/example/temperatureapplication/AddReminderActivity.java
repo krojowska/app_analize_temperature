@@ -210,6 +210,8 @@ public class AddReminderActivity extends AppCompatActivity implements
 
     }
 
+
+
     @Override
     protected void onSaveInstanceState (Bundle outState) {
         super.onSaveInstanceState(outState);

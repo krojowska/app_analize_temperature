@@ -79,8 +79,9 @@ public class AllMedicines extends AppCompatActivity {
                         JSONObject c = contacts.getJSONObject(i);
 
                         String medicine= c.getString("medicine");
-                        String dose = c.getString("dose");
-                        String time_of_day = c.getString("time_of_day");
+                        String start_date = c.getString("start_date");
+                        String time_of_dose = c.getString("time_of_dose");
+                        String repetition_interval = c.getString("repetition_interval");
                         String reading_time = c.getString("reading_time");
 
 
@@ -89,8 +90,9 @@ public class AllMedicines extends AppCompatActivity {
 
                         // adding each child node to HashMap key => value
                         contact.put("medicine", medicine);
-                        contact.put("dose", dose);
-                        contact.put("time_of_day", time_of_day);
+                        contact.put("start_date", start_date);
+                        contact.put("time_of_dose", time_of_dose);
+                        contact.put("repetition_interval", repetition_interval);
                         contact.put("reading_time", reading_time);
 
                         // adding contact to contact list
@@ -136,9 +138,9 @@ public class AllMedicines extends AppCompatActivity {
              * */
             ListAdapter adapter = new SimpleAdapter(
                     AllMedicines.this, contactList,
-                    R.layout.medicine_item, new String[]{"medicine", "dose",
-                    "time_of_day", "reading_time"}, new int[]{R.id.medicine,
-                    R.id.dose, R.id.time_of_day, R.id.reading_time});
+                    R.layout.medicine_item, new String[]{"medicine", "start_date",
+                    "time_of_dose", "repetition_interval", "reading_time"}, new int[]{R.id.medicine,
+                    R.id.start_date, R.id.time_of_dose, R.id.repetition_interval, R.id.reading_time});
 
             lv.setAdapter(adapter);
         }
