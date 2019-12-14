@@ -43,6 +43,12 @@
             android:layout_marginRight="16dp"
             android:layout_height="140dp"/>
 
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+
     </LinearLayout>
 
     <ScrollView
@@ -299,7 +305,13 @@
                 </LinearLayout>
 
             </RelativeLayout>
-
+            <Button
+                android:id="@+id/saveBtn"
+                android:text="Save"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="SaveMedicine"/>
         </LinearLayout>
 
     </ScrollView>

@@ -60,6 +60,8 @@ public class AddReminderActivity extends AppCompatActivity implements
     private String mRepeatType;
     private String mActive;
 
+    String medicine, start_date, time_of_dose, repetition_interval;
+
     private Uri mCurrentReminderUri;
     private boolean mVehicleHasChanged = false;
 
@@ -206,11 +208,18 @@ public class AddReminderActivity extends AppCompatActivity implements
         getSupportActionBar().setTitle(R.string.title_activity_add_reminder);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
-
-
     }
 
-
+    public void SaveMedicine(View view){
+        medicine = mTitleText.getText().toString();
+        start_date = mDateText.getText().toString();
+        time_of_dose = mTimeText.getText().toString();
+        repetition_interval = mRepeatText.getText().toString();
+        String method = "saveMedicine";
+        BackgroundTask backgroundTask = new BackgroundTask(this);
+        backgroundTask.execute(method, medicine, start_date, time_of_dose, repetition_interval);
+        finish();
+    }
 
     @Override
     protected void onSaveInstanceState (Bundle outState) {

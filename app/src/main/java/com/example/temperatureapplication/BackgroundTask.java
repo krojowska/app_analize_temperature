@@ -30,8 +30,9 @@ public class BackgroundTask extends AsyncTask <String, Void, String> {
         String method = params[0];
         if(method.equals("saveMedicine")){
             String medicine = params[1];
-            String dose = params[2];
-            String time_of_day = params[3];
+            String start_date = params[2];
+            String time_of_dose = params[3];
+            String repetition_interval = params[4];
             try {
                 URL url =  new URL(med_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
@@ -40,8 +41,9 @@ public class BackgroundTask extends AsyncTask <String, Void, String> {
                 OutputStream OS = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(OS, "UTF-8"));
                 String data = URLEncoder.encode("medicine", "UTF-8") + "=" + URLEncoder.encode(medicine, "UTF-8") + "&" +
-                        URLEncoder.encode("dose", "UTF-8") + "=" + URLEncoder.encode(dose, "UTF-8") + "&" +
-                        URLEncoder.encode("time_of_day", "UTF-8") + "=" + URLEncoder.encode(time_of_day, "UTF-8");
+                        URLEncoder.encode("start_date", "UTF-8") + "=" + URLEncoder.encode(start_date, "UTF-8") + "&" +
+                        URLEncoder.encode("time_of_dose", "UTF-8") + "=" + URLEncoder.encode(time_of_dose, "UTF-8")+ "&" +
+                        URLEncoder.encode("repetition_interval", "UTF-8") + "=" + URLEncoder.encode(repetition_interval, "UTF-8");
                 bufferedWriter.write(data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
