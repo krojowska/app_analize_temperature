@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class ButtonsPage extends AppCompatActivity {
-    Button btnViewData, btnAllMedicines, btnAddMedicine, btnDiagram, btnNotifications;
+    Button btnViewData, btnAllMedicines, btnDiagram, btnNotifications;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +19,6 @@ public class ButtonsPage extends AppCompatActivity {
         btnViewData = findViewById(R.id.btnViewData);
         btnAllMedicines = findViewById(R.id.btnAllMedicines);
         btnDiagram = findViewById(R.id.btnDiagram);
-        btnAddMedicine = findViewById(R.id.btnAddMedicine);
         btnNotifications = findViewById(R.id.btnNotifications);
 
         // view products click event
@@ -30,14 +29,12 @@ public class ButtonsPage extends AppCompatActivity {
                 startActivity(new Intent(ButtonsPage.this, MainActivity.class));
             }
         });
-
         btnAllMedicines.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ButtonsPage.this, AllMedicines.class));
             }
         });
-
         btnDiagram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,14 +42,6 @@ public class ButtonsPage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        btnAddMedicine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(ButtonsPage.this, AddMedicine.class));
-            }
-        });
-
         btnNotifications.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

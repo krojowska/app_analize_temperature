@@ -23,7 +23,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".AddMedicine" />
         <activity android:name=".AllMedicines" />
         <activity android:name=".ApiClient" />
         <activity android:name=".ChartFragment" />

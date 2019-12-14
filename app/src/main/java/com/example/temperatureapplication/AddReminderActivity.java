@@ -218,7 +218,6 @@ public class AddReminderActivity extends AppCompatActivity implements
         String method = "saveMedicine";
         BackgroundTask backgroundTask = new BackgroundTask(this);
         backgroundTask.execute(method, medicine, start_date, time_of_dose, repetition_interval);
-        finish();
     }
 
     @Override
