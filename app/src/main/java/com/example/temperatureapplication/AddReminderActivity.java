@@ -210,14 +210,19 @@ public class AddReminderActivity extends AppCompatActivity implements
         getSupportActionBar().setHomeButtonEnabled(true);
     }
 
-    public void SaveMedicine(View view){
+    public void saveMedicine(View view){
         medicine = mTitleText.getText().toString();
         start_date = mDateText.getText().toString();
         time_of_dose = mTimeText.getText().toString();
         repetition_interval = mRepeatText.getText().toString();
-        String method = "saveMedicine";
-        BackgroundTask backgroundTask = new BackgroundTask(this);
-        backgroundTask.execute(method, medicine, start_date, time_of_dose, repetition_interval);
+        if (medicine.isEmpty() || start_date.isEmpty() || time_of_dose.isEmpty() || repetition_interval.isEmpty()) {
+            Toast.makeText(AddReminderActivity.this, "Please enter all the details", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            String method = "saveMedicine";
+            BackgroundTask backgroundTask = new BackgroundTask(this);
+            backgroundTask.execute(method, medicine, start_date, time_of_dose, repetition_interval);
+        }
     }
 
     @Override

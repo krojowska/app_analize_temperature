@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Temperature Application</string>
     <string name="no_cardetails">Click on the button below to begin creating your reminder!</string>
-    <string name="title_activity_add_reminder">Add Reminder</string>
+    <string name="title_activity_add_reminder">Temperature Application</string>
     <string name="title_activity_edit_reminder">Edit Reminder</string>
     <string name="title_activity_licenses">Licenses</string>
 
