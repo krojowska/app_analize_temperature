@@ -70,28 +70,23 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     JSONObject jsonObj = new JSONObject(jsonStr);
 
-                    // Getting JSON Array node
-                    JSONArray contacts = jsonObj.getJSONArray("SensorData");
+                    JSONArray temperatures = jsonObj.getJSONArray("SensorData");
 
-                    // looping through All Contacts
-                    for (int i = 0; i < contacts.length(); i++) {
-                        JSONObject c = contacts.getJSONObject(i);
+                    for (int i = 0; i < temperatures.length(); i++) {
+                        JSONObject c = temperatures.getJSONObject(i);
 
                         String id = c.getString("chipId");
                         String temperature = c.getString("sensorsTemperature");
                         String time = c.getString("reading_time");
 
 
-                        // tmp hash map for single contact
-                        HashMap<String, String> contact = new HashMap<>();
+                        HashMap<String, String> temp = new HashMap<>();
 
-                        // adding each child node to HashMap key => value
-                        contact.put("chipId", id);
-                        contact.put("sensorsTemperature", temperature);
-                        contact.put("reading_time", time);
+                        temp.put("chipId", id);
+                        temp.put("sensorsTemperature", temperature);
+                        temp.put("reading_time", time);
 
-                        // adding contact to contact list
-                        contactList.add(contact);
+                        contactList.add(temp);
                     }
                 } catch (final JSONException e) {
                     Log.e(TAG, "Json parsing error: " + e.getMessage());

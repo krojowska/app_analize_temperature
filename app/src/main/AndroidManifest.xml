@@ -29,6 +29,7 @@
         <activity android:name=".Growth" />
         <activity android:name=".AppInterface" />
         <activity android:name=".MainNotifications" />
+        <activity android:name=".SoundAlarm" />
         <activity android:name=".AddReminderActivity"
             android:label="@string/title_activity_add_reminder"
             android:parentActivityName=".MainNotifications"
