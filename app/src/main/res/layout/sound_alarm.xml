@@ -7,6 +7,7 @@
     android:padding="10dp"
     tools:context=".SoundAlarm">
     <TextView
+        android:id="@+id/alarmSetting"
         android:layout_width="wrap_content"
         android:text="Alarm Setting"
         android:textSize="30dp"
@@ -16,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"/>
     <TextView
+        android:id="@+id/enterTemp"
         android:layout_width="wrap_content"
         android:text="Enter temperature:"
         android:layout_gravity="center_horizontal"
@@ -25,16 +27,17 @@
         android:textStyle="bold"
         android:textSize="20dp" />
     <EditText
-        android:id="@+id/emailEt"
+        android:id="@+id/tempEt"
         android:layout_width="110dp"
         android:layout_marginBottom="60dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal" />
     <Button
-        android:id="@+id/loginBtn"
+        android:id="@+id/setBtn"
         android:text="Set"
         android:layout_marginBottom="30dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_width="110dp" />
+        android:layout_width="110dp"
+        android:onClick="addAlarm"/>
 </LinearLayout>

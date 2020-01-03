@@ -2,6 +2,7 @@ package com.example.temperatureapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -22,7 +23,12 @@ public class ButtonsPage extends AppCompatActivity {
         btnNotifications = findViewById(R.id.btnNotifications);
         btnAlarm = findViewById(R.id.btnAlarm);
 
-        // view products click event
+
+       // startActivity(new Intent(ButtonsPage.this, GetAlarmTemperature.class));
+        GetAlarmTemperature getTemp = new GetAlarmTemperature();
+        getTemp.execute();
+        String a = GetAlarmTemperature.alarmTemp;
+
         btnViewData.setOnClickListener(new View.OnClickListener() {
 
             @Override

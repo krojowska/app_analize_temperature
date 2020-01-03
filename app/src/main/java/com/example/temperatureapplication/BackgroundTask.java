@@ -26,6 +26,7 @@ public class BackgroundTask extends AsyncTask <String, Void, String> {
     @Override
     protected String doInBackground(String... params) {
         String med_url = "http://www.student.agh.edu.pl/~rojowska/insert-medicines.php";
+        String sound_url = "http://www.student.agh.edu.pl/~rojowska/update-sound.php";
 
         String method = params[0];
         if(method.equals("saveMedicine")){
@@ -57,6 +58,30 @@ public class BackgroundTask extends AsyncTask <String, Void, String> {
                 e.printStackTrace();
             }
         }
+
+         else if(method.equals("addAlarm")){
+            String temp = params[1];
+            try {
+                URL url =  new URL(sound_url);
+                HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoOutput(true);
+                OutputStream OS = httpURLConnection.getOutputStream();
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(OS, "UTF-8"));
+                String data = URLEncoder.encode("alarm_temperature", "UTF-8") + "=" + URLEncoder.encode(temp, "UTF-8");
+                bufferedWriter.write(data);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                OS.close();
+                InputStream IS = httpURLConnection.getInputStream();
+                IS.close();
+                return "Alarm temperature saved successfully";
+            } catch (MalformedURLException e){
+                e.printStackTrace();
+            } catch (IOException e){
+                e.printStackTrace();
+            }
+        }
         return null;
     }
     @Override
@@ -66,6 +91,10 @@ public class BackgroundTask extends AsyncTask <String, Void, String> {
     @Override
     protected void onPostExecute(String result) {
         if(result.equals("Medicine saved successfully"))
+        {
+            Toast.makeText(ctx, result, Toast.LENGTH_LONG).show();
+        }
+        else if(result.equals("Alarm temperature saved successfully"))
         {
             Toast.makeText(ctx, result, Toast.LENGTH_LONG).show();
         }

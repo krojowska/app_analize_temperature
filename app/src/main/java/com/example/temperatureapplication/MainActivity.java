@@ -1,6 +1,9 @@
 package com.example.temperatureapplication;
 
 import android.app.ProgressDialog;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -87,6 +90,15 @@ public class MainActivity extends AppCompatActivity {
                         temp.put("reading_time", time);
 
                         contactList.add(temp);
+                        String alarmTempStr = GetAlarmTemperature.alarmTemp;
+                        float alarmTemp = Float.parseFloat(alarmTempStr);
+                        float tempFromDB = Float.parseFloat(temperature);
+                        if (alarmTemp <= tempFromDB) {
+                            Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+                            Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+                            r.play();
+                        }
+
                     }
                 } catch (final JSONException e) {
                     Log.e(TAG, "Json parsing error: " + e.getMessage());
