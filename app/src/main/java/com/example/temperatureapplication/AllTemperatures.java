@@ -6,12 +6,13 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,14 +21,14 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MainActivity extends AppCompatActivity {
+public class AllTemperatures  extends AppCompatActivity {
 
-    private String TAG = MainActivity.class.getSimpleName();
+    private String TAG = AllTemperatures.class.getSimpleName();
 
     private ProgressDialog pDialog;
     private ListView lv;
 
-    private static String url = "http://www.student.agh.edu.pl/~rojowska/test.php";
+    private static String url = "http://www.student.agh.edu.pl/~rojowska/all-temperatures.php";
 
     ArrayList<HashMap<String, String>> contactList;
 
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
             // Showing progress dialog
-            pDialog = new ProgressDialog(MainActivity.this);
+            pDialog = new ProgressDialog(AllTemperatures.this);
             pDialog.setMessage("Please wait...");
             pDialog.setCancelable(false);
             pDialog.show();
@@ -88,14 +89,6 @@ public class MainActivity extends AppCompatActivity {
                         temp.put("reading_time", time);
 
                         contactList.add(temp);
-                        String alarmTempStr = GetAlarmTemperature.alarmTemp;
-                        float alarmTemp = Float.parseFloat(alarmTempStr);
-                        float tempFromDB = Float.parseFloat(temperature);
-                        if (alarmTemp <= tempFromDB) {
-                            Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-                            Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
-                            r.play();
-                        }
                     }
                 } catch (final JSONException e) {
                     Log.e(TAG, "Json parsing error: " + e.getMessage());
@@ -136,8 +129,8 @@ public class MainActivity extends AppCompatActivity {
             /**
              * Updating parsed JSON data into ListView
              * */
-                ListAdapter adapter = new SimpleAdapter(
-                    MainActivity.this, contactList,
+            ListAdapter adapter = new SimpleAdapter(
+                    AllTemperatures.this, contactList,
                     R.layout.sensor_item, new String[]{"sensorsTemperature", "reading_time",
                     "chipId"}, new int[]{R.id.sensorsTemperature,
                     R.id.reading_time, R.id.chipId});

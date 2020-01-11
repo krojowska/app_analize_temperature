@@ -9,11 +9,18 @@ public class Growth {
     @SerializedName("id")
     private int Id;
 
+    @SerializedName("reading_time")
+    private String time;
+
     public float getTemperature() {
         return Temperature;
     }
 
     public int getId() {
         return Id;
+    }
+
+    public String getTime() {
+        return time;
     }
 }

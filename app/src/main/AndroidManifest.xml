@@ -28,6 +28,7 @@
         <activity android:name=".ChartFragment" />
         <activity android:name=".Growth" />
         <activity android:name=".AppInterface" />
+        <activity android:name=".AllTemperatures" />
         <activity android:name=".MainNotifications" />
         <activity android:name=".GetAlarmTemperature" />
         <activity android:name=".SoundAlarm" />

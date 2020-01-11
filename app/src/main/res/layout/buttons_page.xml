@@ -5,10 +5,15 @@
     android:orientation="vertical"
     android:gravity="center_horizontal">
 
-    <Button android:id="@+id/btnViewData"
+    <Button android:id="@+id/btnOneTemp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Measurement"
+        android:text="Last measurement"
+        android:layout_marginTop="25dip"/>
+    <Button android:id="@+id/btnAllTemp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="All measurements"
         android:layout_marginTop="25dip"/>
     <Button android:id="@+id/btnDiagram"
         android:layout_width="fill_parent"

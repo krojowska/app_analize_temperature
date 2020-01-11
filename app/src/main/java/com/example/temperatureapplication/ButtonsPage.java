@@ -10,18 +10,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class ButtonsPage extends AppCompatActivity {
-    Button btnViewData, btnAllMedicines, btnDiagram, btnNotifications, btnAlarm;
+    Button btnOneTemp, btnViewData, btnAllMedicines, btnDiagram, btnNotifications, btnAlarm, btnAllTemp;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.buttons_page);
 
         // Buttons
-        btnViewData = findViewById(R.id.btnViewData);
+        btnOneTemp = findViewById(R.id.btnOneTemp);
         btnAllMedicines = findViewById(R.id.btnAllMedicines);
         btnDiagram = findViewById(R.id.btnDiagram);
         btnNotifications = findViewById(R.id.btnNotifications);
         btnAlarm = findViewById(R.id.btnAlarm);
+        btnAllTemp = findViewById(R.id.btnAllTemp);
 
 
        // startActivity(new Intent(ButtonsPage.this, GetAlarmTemperature.class));
@@ -29,11 +30,18 @@ public class ButtonsPage extends AppCompatActivity {
         getTemp.execute();
         String a = GetAlarmTemperature.alarmTemp;
 
-        btnViewData.setOnClickListener(new View.OnClickListener() {
+        btnOneTemp.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ButtonsPage.this, MainActivity.class));
+            }
+        });
+        btnAllTemp.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ButtonsPage.this, AllTemperatures.class));
             }
         });
         btnAllMedicines.setOnClickListener(new View.OnClickListener() {

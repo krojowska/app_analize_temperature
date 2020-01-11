@@ -12,13 +12,16 @@ import android.view.ViewGroup;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
@@ -67,7 +70,7 @@ public class ChartFragment extends Fragment {
                          lineDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
 
                     LineData  barData = new LineData(lineDataSet);
-                       // barData.setBarWidth(0.9f);
+
                     lineChart.setVisibility(View.VISIBLE);
                     //lineChart.animateY(2500);
                     barData.setValueTextColor(Color.GREEN);

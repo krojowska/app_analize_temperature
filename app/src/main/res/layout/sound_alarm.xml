@@ -35,9 +35,25 @@
     <Button
         android:id="@+id/setBtn"
         android:text="Set"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="80dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_width="110dp"
         android:onClick="addAlarm"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="Alarm activation temperature:"
+        android:layout_gravity="left"
+        android:layout_height="wrap_content"
+        android:textColor="@color/fab_pressed"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold"
+        android:textSize="20dp" />
+    <TextView
+        android:id="@+id/displayAlarmTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/fab_pressed"
+        android:textStyle="bold"
+        android:textSize="20dp"/>
 </LinearLayout>
