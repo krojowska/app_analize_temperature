@@ -1,6 +1,7 @@
 package com.example.temperatureapplication;
 
 import android.app.ProgressDialog;
+import android.media.MediaPlayer;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -92,9 +93,11 @@ public class MainActivity extends AppCompatActivity {
                         float alarmTemp = Float.parseFloat(alarmTempStr);
                         float tempFromDB = Float.parseFloat(temperature);
                         if (alarmTemp <= tempFromDB) {
-                            Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-                            Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
-                            r.play();
+//                            Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+//                            Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+//                            r.play();
+                            final MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.song);
+                            mp.start();
                         }
                     }
                 } catch (final JSONException e) {
